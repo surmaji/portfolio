@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-shapes">    
+        <span class="shape s1"></span>
+        <span class="shape s2"></span>
+        <span class="shape s3"></span>
+        <span class="shape s4"></span>
+        <span class="shape s5"></span>
+        <span class="shape s6"></span>
+        <span class="shape s7"></span>
+        <span class="shape s8"></span>
+    </div>
+
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <section class = "front_page">
+        <div class ="exp-box">
+            <h1 class = "name"> T. ANJALI SUMAN </h1>
+            <h2 class = "portfolio-text">PORTFOLIO</h2>
+            <button class="cta-btn">Graphic Design &amp; Web Design</button>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+    <section class="section">
+        <h2 class="section-title">SKILLS</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>GRAPHIC DESIGN</h3>
+            </div>
+            <div class="skill-card">
+                <h3>WEB DESIGN</h3>
+            </div>
+            <div class="skill-card">
+                <h3>TOOLS</h3>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+    <section class="Graphic">
+    <div>
+        <h1>GRAPHIC DESIGN</h1>
+        <p>Here are few designs that I have worked on and been published in my club's instagram page</p>
+        <div class="Gdesigns">  
+            <div class="poster-item">
+                <img src="./Graphic Design/onam.jpg" alt="Poster 1" id="img1">
+                <div class="poster-overlay">
+                    <span>POSTER 1</span>
+                </div>
+            </div>
+            <div class="poster-item">
+                <img src="./Graphic Design/Happy Janmashtami (7).jpg" alt="Poster 2" id="img2">
+                <div class="poster-overlay">
+                    <span>POSTER 2</span>
+                </div>
+            </div>
+            <div class="poster-item">
+                <img src="./Graphic Design/National Space Day (11).jpg" alt="Poster 3" id="img3">
+                <div class="poster-overlay">
+                    <span>POSTER 3</span>
+                </div>
+            </div>
+            <div class="poster-item">
+                <img src="./Graphic Design/VD (1).jpg" alt="Poster 4" id="img4">
+                <div class="poster-overlay">
+                    <span>POSTER 4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for fullscreen image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+</section>
+<div class="section-divider"></div>
+
+<section class="Web">
+    <div>
+        <div class="web-content">
+            <div class="web-header">
+                <h1>WEB DESIGN</h1>
+                <p>Here is my first web design which I made for an internship in CoralComp</p>
+            </div>
+            <div class="web-image-container" id="webDesignImage">
+                <div class="web-image-wrapper">
+                    <img src="./Web Design/surmaji.github.io_CoralComp_ (1).png" alt="Web Design Project">
+                </div>
+                <div class="web-label">
+                    <span>Click to View Project</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class = "Contact">
+        <h1>Contact</h1>
+        <p>Email: anjalisuman299@gmail.com</p><br>
+        <p>Phone: +122 2344 2323</p>
+    </div>
+</section>
+
+<script>
+    // Get modal elements
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.querySelector('.close');
+
+    // Get all poster items
+    const posters = document.querySelectorAll('.poster-item');
+
+    // Add click event to each poster
+    posters.forEach(poster => {
+        poster.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+        });
+    });
+
+    // Close modal when clicking X
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+// Replace the previous webDesignImage click handler with this:
+const webDesignImage = document.getElementById('webDesignImage');
+webDesignImage.addEventListener('click', function() {
+    // Replace this URL with your actual CoralComp website URL
+    window.open('https://surmaji.github.io/CoralComp/', '_blank');
+});
+</script>
+</body>
+</html>
